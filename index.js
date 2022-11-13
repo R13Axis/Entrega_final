@@ -1,3 +1,79 @@
+class acceso {
+
+    constructor (usuario,clave) {
+        this.usuario = usuario;
+        this.clave = clave;
+    }
+
+}
+
+const usuario1 = new acceso("Tocaimaza","ricardofor");
+const usuario2 = new acceso("coder" , "12345");
+const usuario3 = new acceso("random","1234")
+
+
+let usuariosPermitidos = [usuario1, usuario2, usuario3];
+
+Swal.fire({
+    title: "Login",
+    html: `<input type="text" id="usuario" class="swal2-input" placeholder="usuario">
+    <input type="password" id="password" class="swal2-input" placeholder="Password">`,
+    confirmButtonText: "Enviar",
+    showCancelButton: true,
+    cancelButtonText: "Cancelar",
+}).then((result)=> {
+
+    if (result.isConfirmed) {
+
+        let usuario = document.getElementById("usuario").value;
+        let password = document.getElementById("password").value;
+
+
+        if (usuario === usuariosPermitidos[0].usuario && password === usuariosPermitidos[0].clave) {
+
+            let y = usuariosPermitidos.indexOf(usuario1);
+
+            Swal.fire({
+                title: "Bienvenido " + usuariosPermitidos[y].usuario,
+                icon: "success",
+                confirmButtonText: "Aceptar"
+            })
+
+        }
+
+        if (usuario === usuariosPermitidos[1].usuario && password === usuariosPermitidos[1].clave) {
+
+            let y = usuariosPermitidos.indexOf(usuario2);
+
+            console.log(y);
+
+            Swal.fire({
+                title: "Bienvenido " + usuariosPermitidos[y].usuario,
+                icon: "success",
+                confirmButtonText: "Aceptar"
+            })
+
+        }
+
+        if (usuario === usuariosPermitidos[2].usuario && password === usuariosPermitidos[2].usuario) {
+
+            let y = usuariosPermitidos.indexOf(usuario3);
+
+            Swal.fire({
+                title: "Bienvenido " + usuariosPermitidos[y].usuario,
+                icon: "success",
+                confirmButtonText: "Aceptar"
+            })
+
+        }
+
+
+    }
+
+
+})
+
+
 // API
 
 // var myHeaders = new Headers();
