@@ -16,10 +16,12 @@
 
 let fijar = document.getElementById("fijar");
 let moneda = document.getElementById("moneda");
+let cotizacion = document.getElementById("cotizacion").style.display = "none";
 
 fijar.addEventListener('click' , () => {
 
     if (document.getElementById("monto_indicado").value <= 1000) {
+        document.getElementById("04").style.display = "none";
         document.getElementById("05").style.display = "none";
         document.getElementById("06").style.display = "none";
         document.getElementById("07").style.display = "none";
@@ -49,5 +51,30 @@ fijar.addEventListener('click' , () => {
     
     }
 })
+
+let plazo = document.getElementById("plazo");
+let tiempo = document.getElementById("tiempo");
+let cuota = document.getElementById("cuota");
+
+plazo.addEventListener('change', () => {
+
+tiempo.innerText = "Duración de los pagos: " + parseInt(plazo.options[plazo.selectedIndex].value) + " meses";
+
+let variable = document.getElementById("monto_indicado").value / parseInt(plazo.options[plazo.selectedIndex].value);
+
+cuota.innerText = parseInt(plazo.options[plazo.selectedIndex].value) + " Cuotas de: " + variable;
+
+cotizacion = document.getElementById("cotizacion").style.display = "block";
+
+})
+
+
+
+
+
+
+
+
+
 
 
