@@ -29,10 +29,9 @@ fijar.addEventListener('click' , () => {
 
     if (document.getElementById("monto_indicado").value >= 1000 && document.getElementById("monto_indicado").value <= 10000) {
 
-        document.getElementById("01").style.display = "none";
-        document.getElementById("02").style.display = "none";
-        document.getElementById("03").style.display = "none";
-        document.getElementById("04").style.display = "none";
+        document.getElementById("05").style.display = "none";
+        document.getElementById("06").style.display = "none";
+        document.getElementById("07").style.display = "none";
         document.getElementById("08").style.display = "none";
         document.getElementById("09").style.display = "none";
 
@@ -50,3 +49,5 @@ fijar.addEventListener('click' , () => {
     
     }
 })
+
+
