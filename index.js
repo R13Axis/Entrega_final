@@ -40,6 +40,9 @@ Swal.fire({
             })
 
         }
+        else {
+            document.getElementById("body").style.display = "none";
+        }
 
         if (usuario === usuariosPermitidos[1].usuario && password === usuariosPermitidos[1].clave) {
 
@@ -52,6 +55,10 @@ Swal.fire({
                 icon: "success",
                 confirmButtonText: "Aceptar"
             })
+
+        }
+        else {
+            document.getElementById("body").style.display = "none";
 
         }
 
@@ -67,6 +74,11 @@ Swal.fire({
 
         }
 
+        else { 
+            document.getElementById("body").style.display = "none";
+
+        }
+
 
     }
 
@@ -76,19 +88,32 @@ Swal.fire({
 
 // API
 
-// var myHeaders = new Headers();
-// myHeaders.append("apikey", "aCf46N7t7HeUTKEpFq3rfRwoknUxYYqM");
+const api = "https://api.exchangerate.host/latest";
+const contenedor = document.getElementById("contenedor");
 
-// var requestOptions = {
-//   method: 'GET',
-//   redirect: 'follow',
-//   headers: myHeaders
-// };
+setInterval( () => {
+    fetch(api)
+.then(response => response.json())
+.then((data) => {
+console.log(data);
 
-// fetch("https://api.apilayer.com/exchangerates_data/latest?symbols=mxn%2Ceur&base=usd", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
+let mxn = data.rates.MXN; 
+let cad = data.rates.CAD; 
+let usd = data.rates.USD; 
+let eur = data.base.EUR; 
+    contenedor.innerHTML=`
+    
+    <h2>Divisas</h2>
+    
+    <p>MXN: ${mxn}</p>
+    <p>USD: ${usd}</p>
+    <p>CAD: ${cad}</p>
+    `
+})
+.catch(error => console.log(error));
+}, 3000)
+
+
 
 let fijar = document.getElementById("fijar");
 let moneda = document.getElementById("moneda");
