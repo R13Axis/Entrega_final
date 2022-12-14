@@ -9,7 +9,7 @@ class acceso {
 
 const usuario1 = new acceso("Tocaimaza","ricardofor");
 const usuario2 = new acceso("coder" , "12345");
-const usuario3 = new acceso("random","1234")
+const usuario3 = new acceso("random","pepelepu24")
 
 
 let usuariosPermitidos = [usuario1, usuario2, usuario3];
@@ -25,11 +25,8 @@ Swal.fire({
 
     if (result.isConfirmed) {
 
-        let usuario = document.getElementById("usuario").value;
-        let password = document.getElementById("password").value;
 
-
-        if (usuario === usuariosPermitidos[0].usuario && password === usuariosPermitidos[0].clave) {
+        if (document.getElementById("usuario").value === usuariosPermitidos[0].usuario && document.getElementById("password").value === usuariosPermitidos[0].clave) {
 
             let y = usuariosPermitidos.indexOf(usuario1);
 
@@ -40,11 +37,7 @@ Swal.fire({
             })
 
         }
-        else {
-            document.getElementById("body").style.display = "none";
-        }
-
-        if (usuario === usuariosPermitidos[1].usuario && password === usuariosPermitidos[1].clave) {
+        else if (document.getElementById("usuario").value === usuariosPermitidos[1].usuario && document.getElementById("password").value === usuariosPermitidos[1].clave) {
 
             let y = usuariosPermitidos.indexOf(usuario2);
 
@@ -57,12 +50,7 @@ Swal.fire({
             })
 
         }
-        else {
-            document.getElementById("body").style.display = "none";
-
-        }
-
-        if (usuario === usuariosPermitidos[2].usuario && password === usuariosPermitidos[2].usuario) {
+        else  if (document.getElementById("usuario").value === usuariosPermitidos[2].usuario && document.getElementById("password").value === usuariosPermitidos[2].usuario) {
 
             let y = usuariosPermitidos.indexOf(usuario3);
 
