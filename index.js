@@ -7,9 +7,9 @@ class acceso {
 
 }
 
-const usuario1 = new acceso("Tocaimaza","ricardofor");
+const usuario1 = new acceso("Tocaimaza", "ricardofor");
 const usuario2 = new acceso("coder" , "12345");
-const usuario3 = new acceso("random","pepelepu24")
+const usuario3 = new acceso("random", "pepelepu24")
 
 
 let usuariosPermitidos = [usuario1, usuario2, usuario3];
@@ -36,8 +36,7 @@ Swal.fire({
                 confirmButtonText: "Aceptar"
             })
 
-        }
-        else if (document.getElementById("usuario").value === usuariosPermitidos[1].usuario && document.getElementById("password").value === usuariosPermitidos[1].clave) {
+        } else if (document.getElementById("usuario").value === usuariosPermitidos[1].usuario && document.getElementById("password").value === usuariosPermitidos[1].clave) {
 
             let y = usuariosPermitidos.indexOf(usuario2);
 
@@ -49,8 +48,7 @@ Swal.fire({
                 confirmButtonText: "Aceptar"
             })
 
-        }
-        else  if (document.getElementById("usuario").value === usuariosPermitidos[2].usuario && document.getElementById("password").value === usuariosPermitidos[2].usuario) {
+        } else if (document.getElementById("usuario").value === usuariosPermitidos[2].usuario && document.getElementById("password").value === usuariosPermitidos[2].usuario) {
 
             let y = usuariosPermitidos.indexOf(usuario3);
 
@@ -60,9 +58,7 @@ Swal.fire({
                 confirmButtonText: "Aceptar"
             })
 
-        }
-
-        else { 
+        } else { 
             document.getElementById("body").style.display = "none";
 
         }
