@@ -48,7 +48,7 @@ Swal.fire({
                 confirmButtonText: "Aceptar"
             })
 
-        } else if (document.getElementById("usuario").value === usuariosPermitidos[2].usuario && document.getElementById("password").value === usuariosPermitidos[2].usuario) {
+        } else if (document.getElementById("usuario").value === usuariosPermitidos[2].usuario && document.getElementById("password").value === usuariosPermitidos[2].clave) {
 
             let y = usuariosPermitidos.indexOf(usuario3);
 
